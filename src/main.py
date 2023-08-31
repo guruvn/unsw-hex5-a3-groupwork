@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 import time
 import http.client  # Import the http module
+import urllib3  # Import the urllib3 module
 
 # Get the directory where the Python script is located
 script_directory = os.path.dirname(os.path.abspath(__file__))
