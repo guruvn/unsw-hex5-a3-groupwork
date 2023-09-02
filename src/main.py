@@ -13,11 +13,11 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 url = "http://54.206.178.157:8084/classified.html"
 
 # Path to the file containing usernames in the same directory as the script
-usernames_filename = "xato-net-10-million-usernames-dup.txt"
+usernames_filename = "data/usernames/xato-net-10-million-usernames-dup.txt"
 usernames_file_path = os.path.join(script_directory, usernames_filename)
 
 # Path to the file containing passwords in the same directory as the script
-passwords_filename = "passwords.txt"
+passwords_filename = "data/passwords/passwords.txt"
 passwords_file_path = os.path.join(script_directory, passwords_filename)
 
 # Define the subdirectory path for output files
